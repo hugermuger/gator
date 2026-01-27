@@ -7,11 +7,23 @@ import (
 )
 
 func main() {
-	config, err := config.Read()
+	jsonconfig, err := config.Read()
 	if err != nil {
 		fmt.Printf("Error: %v\n", err)
 		return
 	}
-	fmt.Printf("Test: %v", config)
-	return
+
+	err = jsonconfig.SetUser("hugermuger")
+	if err != nil {
+		fmt.Printf("Error: %v\n", err)
+		return
+	}
+
+	jsonconfig, err = config.Read()
+	if err != nil {
+		fmt.Printf("Error: %v\n", err)
+		return
+	}
+
+	fmt.Printf("Test: %v", jsonconfig)
 }

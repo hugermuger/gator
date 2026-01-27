@@ -11,6 +11,6 @@ func getConfigFilePath() (string, error) {
 		return "", err
 	}
 
-	filePath := filepath.Join(homeDir, ".gatorconfig.json")
+	filePath := filepath.Join(homeDir, configFileName)
 	return filePath, nil
 }
