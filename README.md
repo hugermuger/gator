@@ -16,25 +16,25 @@ You need a running PostgreSQL instance to store users, feeds, and posts.
 
 macOS (via Homebrew):
 
-brew install postgresql@15
-brew services start postgresql@15
+    brew install postgresql@15
+    brew services start postgresql@15
 
 Ubuntu/Debian:
 
-sudo apt update
-sudo apt install postgresql postgresql-contrib
-sudo systemctl start postgresql
+    sudo apt update
+    sudo apt install postgresql postgresql-contrib
+    sudo systemctl start postgresql
 
 Database Setup: Create a database named gator:
 
-createdb gator
+    createdb gator
 
 3. Install the Program
 
 Clone the repository and install the binary to your $GOPATH/bin:
 Bash
 
-go install github.com/yourusername/gator@latest
+    go install github.com/hugermuger/gator@latest
 
 💻 Command Reference
 
@@ -57,7 +57,7 @@ These can be run by anyone without being logged in.
 
 Authenticated Commands (Middleware Protected)
 
-These commands are wrapped in middlewareLoggedIn. If you aren't logged in, the program will exit with an error before even trying to run the command.
+If you aren't logged in, the program will exit with an error before even trying to run the command.
 
     addfeed <name> <url>: Adds a new RSS feed to the system and automatically follows it.
 
